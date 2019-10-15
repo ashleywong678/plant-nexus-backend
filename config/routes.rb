@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  
+  get '*path', to: "application#fallback_index_html", constraints: ->(request) do
+    !request.xhr? && request.format.html?
+  end
+
   post "/api/v1/login", to: "api/v1/sessions#create" #to log user in
   get "/api/v1/get_current_user", to: "api/v1/sessions#get_current_user" #to send data back about who's logged in
   delete '/api/v1/logout', to: 'api/v1/sessions#destroy'
