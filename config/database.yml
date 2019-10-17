@@ -23,7 +23,7 @@ default: &default
 
 development:
   adapter: postgresql
-  database: my_database_development
+  database: plant-nexus-backend_development
   pool: 5
   timeout: 5000
 
@@ -59,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   adapter: postgresql
-  database: my_database_test
+  database: plant-nexus-backend_test
   pool: 5
   timeout: 5000
 
@@ -84,6 +84,6 @@ test:
 #
 production:
   adapter: postgresql
-  database: my_database_production
+  database: plant-nexus-backend_production
   pool: 5
   timeout: 5000
